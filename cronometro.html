@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<head>
+
+
+</head>
+
+
+
+
+<body>
+
+
+<p>Este es un cambio</p>
+
+<p id="etiqueta"></p>
+<p id="hola">Hola</p>
+
+
+<script> 
+		
+		// setTimeout es para que se ejecute una sola vez y pare. La funcion setInterval se ejecuta repetidamente, por eso use esa mas abajo.
+		//time = setTimeout(function(){console.log("Hola")}, 10000);  ej. de funcion anonima.
+		var seg = 0;
+		// Esta funcion interna setInterval llama a la funcion creada display_time cada segundo. Tiempo requiere ser dado en milesimas de segundo. 
+		timer = setInterval('display_time()', 1000);        
+		
+		
+		// Funcion llamada por setInterval.
+		function display_time() {
+		seg += 1;
+		// Muestra los segundos en el tag etiqueta.
+		document.getElementById("etiqueta").innerHTML = seg;
+		
+		// Si llega a mas de los segundos permitidos clearInterval detiene el timer que tiene la funcion setInterval, ve la arriba.
+		if(seg >= 5) {
+		
+		clearInterval(timer);
+		document.getElementById("hola").style.visibility = "hidden"; 
+		
+		}
+		
+		};
+
+</script>
+
+
+
+</body>
+
+
+
+
+
+</html>
